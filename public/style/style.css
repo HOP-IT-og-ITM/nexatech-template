@@ -1,150 +1,166 @@
 /* Definering av variabler */
 :root {
-  --primary-color: #656565;
-  --secondary-color: #946b78;
-  --accent-color: #000000;
-  --background-color: rgb(26, 26, 29);
-  --text-color: #ffffff;
+    --primary-color: #656565;
+    --secondary-color: #946b78;
+    --accent-color: #000000;
+    --background-color: rgb(26, 26, 29);
+    --text-color: #ffffff;
+    --text-size: 20px;
 }
 
 /* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  font-family: Arial, sans-serif;
+html {
+    font-family: Arial, sans-serif;
+    font-size: var(--text-size);
 }
 
 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
 }
 
 button {
-  background: none;
-  border: none;
-  cursor: pointer;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* CSS stil under her */
 
 body {
-  display: grid;
-  grid-template-rows: 10% auto 10%;
-  height: 100vh;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    min-height: 100vh;
+    background-color: var(--background-color);
 }
 
-button{
-  color: var(--text-color);
+header,
+main,
+footer {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 header {
-  background-color: var(--accent-color);
-  align-content: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  color: var(--text-color);
-  box-shadow: 0px 20px 40px var(--accent-color);
-  z-index: 1;
-}
-
-header .logo-img {
-  width: 25%;
-  padding: 10px;
-  display: block;
-}
-
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 40%;
-}
-
-header nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 2rem;
-}
-
-header nav ul li {
-  position: relative;
-}
-
-header nav ul li a {
-  display: block;
-}
-
-header nav ul li .dropdown-content {
-  display: none;
-  position: absolute;
-    background-color: var(--background-color);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  z-index: 1;
-  white-space: nowrap;
-}
-
-header nav ul li .dropdown-content a {
-  padding: 10px 15px;
-  display: block;
-  color: var(--text-color);
-}
-
-header nav ul li .dropdown-content a:hover {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
-}
-
-header nav ul li:hover .dropdown-content {
-  display: block;
+    display: flex;
+    align-items: center;
+    background-color: var(--accent-color);
+    justify-content: space-between;
+    width: 100%;
+    color: var(--text-color);
+    box-shadow: 0px 20px 40px var(--accent-color);
+    z-index: 1;
 }
 
 main {
-  background-color: var(--background-color);
-  overflow-y: auto;
-  color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    overflow-y: auto;
+    color: var(--text-color);
+    margin-top: 40px;
 }
 
-main .form-wrapper{
-  align-content: center;
-  text-align: center;
-  height: 100%;
+main .form-wrapper {
+    align-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+main > p {
+    max-width: 800px;
 }
 
 footer {
-  background-color: var(--background-color);
-  color: var(--secondary-color);
-  font-size: 1.5rem;
-  align-content: center;
-  text-align: center;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    align-content: center;
+    text-align: center;
+}
+
+button {
+    color: var(--text-color);
+}
+
+header .logo-img {
+    width: 250px;
+    padding: 10px;
+    display: block;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 40%;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+    /* font-size: 2rem; */
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    display: block;
+}
+
+header nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+header nav ul li .dropdown-content a {
+    padding: 10px 15px;
+    display: block;
+    color: var(--text-color);
+}
+
+header nav ul li .dropdown-content a:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+header nav ul li:hover .dropdown-content {
+    display: block;
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="188.7988mm"
+   height="133.26974mm"
+   viewBox="0 0 188.7988 133.26974"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="cloud.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0592242"
+     inkscape:cx="474.40382"
+     inkscape:cy="122.25929"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(6.5003715,2.7272367)">
+    <rect
+       style="fill:none;fill-opacity:0.309804;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill;stroke:#000000"
+       id="rect2"
+       width="188.7988"
+       height="133.26974"
+       x="-6.5003715"
+       y="-2.7272367" />
+    <path
+       d="m 91.122605,14.142973 c -23.491318,0.06546 -43.902712,12.178313 -49.488452,29.368233 -0.360704,-0.01403 -0.721609,-0.02402 -1.082621,-0.02997 -22.762521,1.17e-4 -41.21510335,15.7129 -41.21505585,35.095532 C -0.66357135,97.9594 17.789011,113.67218 40.551532,113.6723 h 94.694998 c 22.76253,-1e-4 41.21512,-13.75579 41.21505,-30.724223 C 176.45138,68.004453 162.01919,55.2335 142.26574,52.688424 l 0.002,-0.0155 C 142.26765,31.393333 119.36938,14.14288 91.123055,14.142976 Z"
+       style="fill:#616161;fill-opacity:0.309804;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+       id="path2" />
+  </g>
+</svg>

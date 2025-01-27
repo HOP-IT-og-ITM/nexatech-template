@@ -97,6 +97,30 @@ main > p {
     max-width: 800px;
 }
 
+
+.index-main {
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align: center;
+    max-width: 1000px;
+    margin: 25px auto; /* Center the content horizontally */
+}
+
+.index-main ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left; /* Anchor text to the left */
+}
+
+.index-main ul li {
+    margin: 10px 0;
+    color: var(--text-color);
+    font-size: var(--text-size);
+}
+
 footer {
     background-color: var(--background-color);
     color: var(--secondary-color);

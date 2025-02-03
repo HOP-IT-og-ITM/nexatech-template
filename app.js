@@ -33,45 +33,18 @@ function isAuthenticated(req, res, next) {
     }
 }
 
-// Ruter legges under her
+// Get-ruter legges under her
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "view", "index.html"));
 });
 
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "login.html"));
+// Logout
+app.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/");
 });
 
-app.get("/ny-bruker", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "ny-bruker.html"));
-});
-
-app.get("/ansatte", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "ansatte.html"));
-});
-
-app.get("/hvem-er-vi", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "hvem-er-vi.html"));
-});
-
-// Denne ruten skal være beskyttet
-app.get("/kunder", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "kunder.html"));
-});
-
-// Denne ruten skal være beskyttet
-app.get("/nexachat", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "nexachat.html"));
-});
-
-app.get("/support", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "støtte.html"));
-});
-
-app.get("/skibbidi", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "view", "skibbidi.html"));
-});
-
+// Post-ruter legges under her
 app.post("/ny-bruker", async (req, res) => {
     const { brukernavn, epost, født, passord } = req.body;
     const hashedPassword = await bcrypt.hash(passord, 10);
@@ -96,23 +69,38 @@ app.post("/login", (req, res) => {
             console.error(err);
             return res.status(500).send("Internal server error");
         }
-
         const users = JSON.parse(fileData);
         const user = users.find((u) => u.brukernavn === brukernavn);
 
         if (user && (await bcrypt.compare(passord, user.passord))) {
             req.session.user = user;
-            res.redirect("/beskyttet-side");
-        } else {
-            res.redirect("/");
         }
+            res.redirect("/");
     });
 });
 
-// Logout
-app.get("/logout", (req, res) => {
-    req.session.destroy();
-    res.redirect("/");
+app.post("/nexachat", (req, res) => {
+    const { kommentar } = req.body;
+    const user = req.session.user;
+    const newComment = { 
+        user: user.brukernavn,
+        kommentar,
+    };
+    fs.readFile("kommentar.json", "utf8", (err, fileData) => {
+        const comments = fileData ? JSON.parse(fileData) : [];
+        comments.push(newComment);
+        fs.writeFile("kommentar.json", JSON.stringify(comments, null, 2), (writeErr) => {
+            res.redirect("/nexachat");
+        });
+    });
+});
+
+// Api for å hente kommentarer fra json-filen
+app.get("/kommentarer", (req, res) => {
+    fs.readFile("kommentar.json", "utf8", (err, fileData) => {
+        const comments = JSON.parse(fileData);
+        res.json(comments);
+    });
 });
 
 // Kjører serveren her

@@ -1,13 +1,13 @@
 {
-  "name": "codelearn",
-  "version": "1.0.0",
+  "name": "dotcomrune",
+  "version": "99999999.99999999.YEEEEEEEEEEEEET",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --watch app.js"
   },
-  "author": "Egil Johnsen Dahle",
+  "author": "Skibbidi Toilet YEEEEEEEEEEEEET!!!!!!!",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
